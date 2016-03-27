@@ -1,0 +1,23 @@
+
+<features name="pax-${project.version}">
+
+    <feature name="mysql-test" version="${project.version}">
+        <feature>obr</feature>
+        <feature>transaction</feature>
+        <feature>jndi</feature>
+        <feature>jdbc</feature>
+        <feature>pax-jdbc</feature>
+        <feature>pax-jdbc-config</feature>
+        <!--<feature>pax-jdbc-pool-dbcp2</feature>-->
+
+        <bundle dependency="true">mvn:org.apache.commons/commons-dbcp2/${commons.dbcp2.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.commons/commons-pool2/${commons.pool2.version}</bundle>
+        <bundle>mvn:org.ops4j.pax.jdbc/pax-jdbc-pool-common/0.8.0</bundle>
+        <bundle>mvn:org.ops4j.pax.jdbc/pax-jdbc-pool-dbcp2/0.8.0</bundle>
+
+        <feature>pax-jdbc-mysql</feature>
+        <bundle dependency="true">mvn:mysql/mysql-connector-java/5.1.38</bundle>
+        <bundle>mvn:pax/jdbc/1.0-SNAPSHOT</bundle>
+    </feature>
+
+</features>
