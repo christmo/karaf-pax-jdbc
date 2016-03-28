@@ -49,3 +49,8 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
 	... 12 more
+
+
+Thanks a lot to Christian Schneider https://github.com/cschneider/, because with his help I could see the problem:
+
+The problem is into OrmCommand.java in the line 45. I'm opening 2 connections but only closing one connection.

@@ -39,7 +39,10 @@ public class OrmCommand implements Action {
 
     @Override
     public Object execute() throws Exception {
-        System.out.println("--DS--: " + ds.getConnection());
+        /**
+         * Always close all connections when you do something like this.
+         */
+        //System.out.println("--DS--: " + ds.getConnection());
 
         //
         // Now, we can use JDBC DataSource as we normally would.
